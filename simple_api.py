@@ -59,7 +59,7 @@ class GetProducts(Resource):
 # /insertProduct - Inserts products into database through Postman
 class InsertProducts(Resource):
     def post(self):
-        Check if API key is provided in the URL
+       # Check if API key is provided in the URL
         api_key = request.args.get('api_key')
         if api_key != API_KEY:
            return jsonify({"error": "Invalid API key"}), 401
