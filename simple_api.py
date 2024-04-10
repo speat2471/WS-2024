@@ -102,4 +102,4 @@ api.add_resource(GetProducts, '/getProducts')
 api.add_resource(InsertProducts, '/insertProducts')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8085)
+    app.run(debug=True)
