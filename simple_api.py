@@ -14,7 +14,7 @@ client = MongoClient("mongodb://root:example@localhost:27017/")
 db = client.Products  
 collection = db.products 
 
-# API_KEY = "letmein"
+API_KEY = "letmein"
 
 # GraphQL object type for Product
 class Product(ObjectType):
@@ -59,10 +59,10 @@ class GetProducts(Resource):
 # /insertProduct - Inserts products into database through Postman
 class InsertProducts(Resource):
     def post(self):
-        # Check if API key is provided in the URL
-        # api_key = request.args.get('api_key')
-        # if api_key != API_KEY:
-        #   return jsonify({"error": "Invalid API key"}), 401
+        Check if API key is provided in the URL
+        api_key = request.args.get('api_key')
+        if api_key != API_KEY:
+           return jsonify({"error": "Invalid API key"}), 401
 
         # Extract data from request
         data = request.json
