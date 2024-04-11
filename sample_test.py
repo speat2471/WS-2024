@@ -15,7 +15,7 @@ def test_get_products(base_url):
     # Add assertions to check the content and structure of the response
 
 def test_insert_product(base_url):
-    url = f"{base_url}/insertProduct"
+    url = f"{base_url}/insertProduct?api_key=letmein"
     payload = {
         "id": "123",
         "name": "Test Product",
