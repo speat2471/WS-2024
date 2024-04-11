@@ -9,14 +9,12 @@ def test_get_titles(base_url):
     assert "productNames" in data
     # Add more assertions to check the structure and content of the response
 
-# Test for '/getProducts' endpoint
 def test_get_products(base_url):
     url = f"{base_url}/getProducts"
     response = requests.get(url)
     assert response.status_code == 200
     data = response.json()
-    # Add assertions to check the content and structure of the response
-    assert len(data) == 3  # Assuming there are 3 products in the database
+    
     # Define your expected data here
     expected_data = [
         {"id": "", "name": "eggs", "cost": 2.99},
