@@ -17,6 +17,4 @@ def test_get_titles(base_url):
 if __name__ == "__main__":
     base_url = "http://127.0.0.1:5000"  # Update with your actual base URL
     test_get_titles(base_url)
-    test_get_products(base_url)
-    stop_servers()
     print("Process completed and ready for the customer")
