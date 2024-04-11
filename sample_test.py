@@ -12,8 +12,7 @@ def test_get_titles(base_url):
     data = response.json()
     print("Product Names:", data.get("productNames"))  # Print out the productNames
     assert "productNames" in data
-    # Add more assertions to check the structure and content of the response
-
+    
 # Main function to run tests
 if __name__ == "__main__":
     base_url = "http://127.0.0.1:5000"  # Update with your actual base URL
