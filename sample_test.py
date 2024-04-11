@@ -15,7 +15,8 @@ def test_get_products(base_url):
     # Add assertions to check the content and structure of the response
 
 def test_insert_product(base_url):
-    url = f"{base_url}/insertProduct"
+    # Construct the URL with the API key as a query parameter
+    url = f"{base_url}/insertProduct?api_key=letmein"
     product = {
         "id": "123",
         "name": "Test Product",
@@ -23,7 +24,7 @@ def test_insert_product(base_url):
     }
     response = requests.post(url, json=product)
     assert response.status_code == 201
-   # Optionally, check if the product is actually inserted into the database
+    # Optionally, check if the product is actually inserted into the database
 
 if __name__ == "__main__":
     base_url = "http://127.0.0.1:5000"  # Update with your actual base URL
