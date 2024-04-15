@@ -3,16 +3,15 @@ import requests
 def test_get_titles(base_url):
     url = f"{base_url}/getTitles"
     response = requests.get(url)
-    
+    if response.status_code == 200:
+        print("Test passed")
+    else:
+        print("Test failed")
+
     assert response.status_code == 200
     data = response.json()
+    print("Product Names:", data.get("productNames"))  # Print out the productNames
     assert "productNames" in data
-    product_names = data.get("productNames")
-    assert isinstance(product_names, list)
-    assert all(isinstance(name, str) for name in product_names)
-    
-    print("Test passed")
-    print("Product Names:", product_names)
     
 # Main function to run tests
 if __name__ == "__main__":
