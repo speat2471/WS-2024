@@ -29,6 +29,6 @@ def test_add_product(base_url):
 # Main function to run tests
 if __name__ == "__main__":
     base_url = "http://127.0.0.1:5000"  # Update with your actual base URL
-    test_get_titles(base_url)
     test_add_product(base_url)
+    test_get_titles(base_url)
     print("Process completed and ready for the customer")
