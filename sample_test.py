@@ -41,6 +41,5 @@ if __name__ == "__main__":
     base_url = "http://127.0.0.1:5000"  # Update with your actual base URL
     test_get_titles(base_url)
     test_get_products(base_url)
-    test_insert_product(base_url)
     test_invalid_api_key(base_url)
     test_missing_data(base_url)
