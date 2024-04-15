@@ -17,7 +17,7 @@ def test_add_product(base_url):
     url = f"{base_url}/insertProducts?api_key=letmein"
     product_data = {
         "id": "123",
-        "name": "Sample Product",
+        "name": "Sample Product v2",
         "cost": 10.99
     }
     response = requests.post(url, json=product_data)
