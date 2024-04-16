@@ -27,6 +27,7 @@ def test_get_products(base_url):
     # Add assertions to check the content and structure of the response
     assert isinstance(data, list)  # Ensure the response is a list
     for product in data:
+        assert "_id" in product
         assert "id" in product
         assert "name" in product
         assert "cost" in product
