@@ -30,3 +30,5 @@ if __name__ == "__main__":
     # Ping the base URL
     print("\nPinging the base URL:")
     ping_url(base_url)
+
+    print("Process completed and ready for the customer")
