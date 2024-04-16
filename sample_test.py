@@ -3,11 +3,20 @@ import requests
 def test_root(base_url):
     url = f"{base_url}/"
     response = requests.get(url)
-    print("Root URL test:")
+    print("\nRoot URL test:")
     if response.status_code == 200:
         print("PASS")
     else:
         print("FAIL")
+
+    # Check if the response data matches the expected data
+    expected_data = {
+        "/getProducts": "Returns a complete JSON list of products from the MongoDB database.",
+        "/getTitles": "Returns a list of product titles from the MongoDB database via a GraphQL server.",
+        "/insertProduct": "Allows insertion of a new product into the MongoDB database. Requires a product id, name, and cost to be sent in the request body. An API key must be provided as a query parameter for authentication."
+    }
+    response_data = response.json()
+    assert response_data == expected_data
 
 def test_get_titles(base_url):
     url = f"{base_url}/getTitles"
@@ -55,10 +64,21 @@ def test_insert_product(base_url):
     else:
         print("FAIL")
 
+    # Write the response to the log file
+    with open("test_results.log", "a") as f:
+        f.write("insertProducts test result:\n")
+        f.write(response.text + "\n")
+        f.write("-------------------------\n")
+
 # Main function to run tests
 if __name__ == "__main__":
     base_url = "http://127.0.0.1:5000"  # Update with your actual base URL
-    test_root(base_url)
-    test_get_titles(base_url)
-    test_get_products(base_url)
-    test_insert_product(base_url)
+
+    # Run tests and write results to log file
+    with open("test_results.log", "w") as f:
+        test_root(base_url)
+        test_get_titles(base_url)
+        test_get_products(base_url)
+        test_insert_product(base_url)
+
+    print("Process completed and ready for the customer")
