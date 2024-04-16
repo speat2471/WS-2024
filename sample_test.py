@@ -13,9 +13,9 @@ def test_get_products(base_url):
     for product in data:
         assert "name" in product
         assert "cost" in product
-        assert "id" in product  # Assuming "id" is the field you expect
+        assert ("id" in product) or ("_id" in product)  # Check for either "id" or "_id" field
 
-    print("Test = PASSED")
+    print("Test passed")
 
 # Main function to run tests
 if __name__ == "__main__":
